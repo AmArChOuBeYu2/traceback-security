@@ -108,7 +108,8 @@ class GeminiNarrativeService:
         """
         Calls Google AI Studio Gemini API endpoint with structured JSON mode.
         """
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
+        url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
+        fallback_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
 
         prompt = f"""You are a tier-3 SOC security analyst building an evidence-locked incident story for a kill-chain correlation engine.
 
@@ -145,7 +146,10 @@ EXPECTED JSON SCHEMA:
 }}
 """
 
-        headers = {"Content-Type": "application/json"}
+        headers = {
+            "Content-Type": "application/json",
+            "x-goog-api-key": api_key,
+        }
         body = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
@@ -158,7 +162,6 @@ EXPECTED JSON SCHEMA:
             resp = client.post(url, headers=headers, json=body)
             if resp.status_code != 200:
                 # Try fallback model gemini-1.5-flash if 2.5-flash is unavailable
-                fallback_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
                 resp = client.post(fallback_url, headers=headers, json=body)
                 if resp.status_code != 200:
                     return None
