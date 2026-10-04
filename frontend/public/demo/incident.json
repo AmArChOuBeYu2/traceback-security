@@ -1,0 +1,1450 @@
+{
+  "incident_id": "INC-2026-0841",
+  "title": "APT-29 Lateral Movement & DNS Exfiltration Chain",
+  "severity": "CRITICAL",
+  "confidence": 0.99,
+  "start_time": "2026-10-04 14:04:02.441 UTC",
+  "end_time": "2026-10-04 14:02:01.010 UTC",
+  "attacker_ip": "198.51.100.42",
+  "compromised_hosts": [
+    "prod-db-01",
+    "prod-bastion-01"
+  ],
+  "compromised_users": [
+    "root",
+    "sysadmin"
+  ],
+  "narrative": [
+    {
+      "claim_id": "CLM-001",
+      "sentence": "[T1078 (Valid Accounts / Mimikatz)] Privilege elevation command executed by user root on None",
+      "evidence_event_ids": [
+        "EV-10102"
+      ],
+      "is_verified": true,
+      "mitre_stage": "Privilege"
+    },
+    {
+      "claim_id": "CLM-002",
+      "sentence": "[T1078 (Valid Accounts / Mimikatz)] Privilege elevation command executed by user None on prod-bastion-01",
+      "evidence_event_ids": [
+        "EV-10103"
+      ],
+      "is_verified": true,
+      "mitre_stage": "Privilege"
+    },
+    {
+      "claim_id": "CLM-003",
+      "sentence": "[T1021.004 (Remote Services: SSH)] Lateral pivot detected from prod-bastion-01 to internal database host prod-db-01",
+      "evidence_event_ids": [
+        "EV-10104"
+      ],
+      "is_verified": true,
+      "mitre_stage": "SSH"
+    },
+    {
+      "claim_id": "CLM-004",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10107"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-005",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10108"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-006",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10109"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-007",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10110"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-008",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10111"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-009",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10112"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-010",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10113"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-011",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10114"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-012",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10115"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-013",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10116"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-014",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10117"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-015",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10118"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-016",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10119"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-017",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10120"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-018",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10121"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-019",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10122"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-020",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10123"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-021",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10124"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-022",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10125"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-023",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10126"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-024",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10127"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-025",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10128"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-026",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10129"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-027",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10130"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-028",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10131"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-029",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10132"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-030",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10133"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-031",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10134"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-032",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10135"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-033",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10136"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-034",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10137"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-035",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10138"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-036",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10139"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-037",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10140"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-038",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10141"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-039",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10142"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-040",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10143"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-041",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10144"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-042",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10145"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-043",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10146"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-044",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10147"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-045",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10148"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-046",
+      "sentence": "[T1071.004 (Application Layer Protocol: DNS)] Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10149"
+      ],
+      "is_verified": true,
+      "mitre_stage": "DNS"
+    },
+    {
+      "claim_id": "CLM-047",
+      "sentence": "[T1110 (Brute Force)] Detected 100 rapid failed SSH authentication attempts from IP 198.51.100.42",
+      "evidence_event_ids": [
+        "EV-100001",
+        "EV-100002",
+        "EV-100003",
+        "EV-100004",
+        "EV-100005",
+        "EV-100006",
+        "EV-100007",
+        "EV-100008",
+        "EV-100009",
+        "EV-100010",
+        "EV-100011",
+        "EV-100012",
+        "EV-100013",
+        "EV-100014",
+        "EV-100015",
+        "EV-100016",
+        "EV-100017",
+        "EV-100018",
+        "EV-100019",
+        "EV-100020",
+        "EV-100021",
+        "EV-100022",
+        "EV-100023",
+        "EV-100024",
+        "EV-100025",
+        "EV-100026",
+        "EV-100027",
+        "EV-100028",
+        "EV-100029",
+        "EV-100030",
+        "EV-100031",
+        "EV-100032",
+        "EV-100033",
+        "EV-100034",
+        "EV-100035",
+        "EV-100036",
+        "EV-100037",
+        "EV-100038",
+        "EV-100039",
+        "EV-100040",
+        "EV-100041",
+        "EV-100042",
+        "EV-100043",
+        "EV-100044",
+        "EV-100045",
+        "EV-100046",
+        "EV-100047",
+        "EV-100048",
+        "EV-100049",
+        "EV-100050",
+        "EV-100051",
+        "EV-100052",
+        "EV-100053",
+        "EV-100054",
+        "EV-100055",
+        "EV-100056",
+        "EV-100057",
+        "EV-100058",
+        "EV-100059",
+        "EV-100060",
+        "EV-100061",
+        "EV-100062",
+        "EV-100063",
+        "EV-100064",
+        "EV-100065",
+        "EV-100066",
+        "EV-100067",
+        "EV-100068",
+        "EV-100069",
+        "EV-100070",
+        "EV-100071",
+        "EV-100072",
+        "EV-100073",
+        "EV-100074",
+        "EV-100075",
+        "EV-100076",
+        "EV-100077",
+        "EV-100078",
+        "EV-100079",
+        "EV-100080",
+        "EV-100081",
+        "EV-100082",
+        "EV-100083",
+        "EV-100084",
+        "EV-100085",
+        "EV-100086",
+        "EV-100087",
+        "EV-100088",
+        "EV-100089",
+        "EV-100090",
+        "EV-100091",
+        "EV-100092",
+        "EV-100093",
+        "EV-100094",
+        "EV-100095",
+        "EV-100096",
+        "EV-100097",
+        "EV-100098",
+        "EV-100099",
+        "EV-100100"
+      ],
+      "is_verified": true,
+      "mitre_stage": "SSH"
+    }
+  ],
+  "replay_steps": [
+    {
+      "step_number": 1,
+      "title": "Privilege Escalation & Credential Access",
+      "mitre_technique": "T1078 (Valid Accounts / Mimikatz)",
+      "timestamp": "2026-10-04 14:04:02.441 UTC",
+      "source_entity": "root",
+      "target_entity": "prod-bastion-01",
+      "action_summary": "Privilege elevation command executed by user root on None",
+      "evidence_event_ids": [
+        "EV-10102"
+      ]
+    },
+    {
+      "step_number": 2,
+      "title": "Privilege Escalation & Credential Access",
+      "mitre_technique": "T1078 (Valid Accounts / Mimikatz)",
+      "timestamp": "2026-10-04 14:04:12.890 UTC",
+      "source_entity": "sysadmin",
+      "target_entity": "prod-bastion-01",
+      "action_summary": "Privilege elevation command executed by user None on prod-bastion-01",
+      "evidence_event_ids": [
+        "EV-10103"
+      ]
+    },
+    {
+      "step_number": 3,
+      "title": "SSH Lateral Pivot to Database Cluster",
+      "mitre_technique": "T1021.004 (Remote Services: SSH)",
+      "timestamp": "2026-10-04 14:06:22.115 UTC",
+      "source_entity": "prod-bastion-01",
+      "target_entity": "prod-db-01",
+      "action_summary": "Lateral pivot detected from prod-bastion-01 to internal database host prod-db-01",
+      "evidence_event_ids": [
+        "EV-10104"
+      ]
+    },
+    {
+      "step_number": 4,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:07.105 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10107"
+      ]
+    },
+    {
+      "step_number": 5,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:08.120 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10108"
+      ]
+    },
+    {
+      "step_number": 6,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:09.135 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10109"
+      ]
+    },
+    {
+      "step_number": 7,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:10.150 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10110"
+      ]
+    },
+    {
+      "step_number": 8,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:11.165 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10111"
+      ]
+    },
+    {
+      "step_number": 9,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:12.180 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10112"
+      ]
+    },
+    {
+      "step_number": 10,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:13.195 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10113"
+      ]
+    },
+    {
+      "step_number": 11,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:14.210 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10114"
+      ]
+    },
+    {
+      "step_number": 12,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:15.225 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10115"
+      ]
+    },
+    {
+      "step_number": 13,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:16.240 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10116"
+      ]
+    },
+    {
+      "step_number": 14,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:17.255 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10117"
+      ]
+    },
+    {
+      "step_number": 15,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:18.270 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10118"
+      ]
+    },
+    {
+      "step_number": 16,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:19.285 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10119"
+      ]
+    },
+    {
+      "step_number": 17,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:20.300 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10120"
+      ]
+    },
+    {
+      "step_number": 18,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:21.315 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10121"
+      ]
+    },
+    {
+      "step_number": 19,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:22.330 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10122"
+      ]
+    },
+    {
+      "step_number": 20,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:23.345 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10123"
+      ]
+    },
+    {
+      "step_number": 21,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:24.360 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10124"
+      ]
+    },
+    {
+      "step_number": 22,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:25.375 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10125"
+      ]
+    },
+    {
+      "step_number": 23,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:26.390 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10126"
+      ]
+    },
+    {
+      "step_number": 24,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:27.405 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10127"
+      ]
+    },
+    {
+      "step_number": 25,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:28.420 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10128"
+      ]
+    },
+    {
+      "step_number": 26,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:29.435 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10129"
+      ]
+    },
+    {
+      "step_number": 27,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:30.450 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10130"
+      ]
+    },
+    {
+      "step_number": 28,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:31.465 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10131"
+      ]
+    },
+    {
+      "step_number": 29,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:32.480 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10132"
+      ]
+    },
+    {
+      "step_number": 30,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:33.495 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10133"
+      ]
+    },
+    {
+      "step_number": 31,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:34.510 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10134"
+      ]
+    },
+    {
+      "step_number": 32,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:35.525 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10135"
+      ]
+    },
+    {
+      "step_number": 33,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:36.540 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10136"
+      ]
+    },
+    {
+      "step_number": 34,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:37.555 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10137"
+      ]
+    },
+    {
+      "step_number": 35,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:38.570 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10138"
+      ]
+    },
+    {
+      "step_number": 36,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:39.585 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10139"
+      ]
+    },
+    {
+      "step_number": 37,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:40.600 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10140"
+      ]
+    },
+    {
+      "step_number": 38,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:41.615 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10141"
+      ]
+    },
+    {
+      "step_number": 39,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:42.630 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10142"
+      ]
+    },
+    {
+      "step_number": 40,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:43.645 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10143"
+      ]
+    },
+    {
+      "step_number": 41,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:44.660 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10144"
+      ]
+    },
+    {
+      "step_number": 42,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:45.675 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10145"
+      ]
+    },
+    {
+      "step_number": 43,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:46.690 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10146"
+      ]
+    },
+    {
+      "step_number": 44,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:47.705 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10147"
+      ]
+    },
+    {
+      "step_number": 45,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:48.720 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10148"
+      ]
+    },
+    {
+      "step_number": 46,
+      "title": "DNS Tunneling Payload Exfiltration",
+      "mitre_technique": "T1071.004 (Application Layer Protocol: DNS)",
+      "timestamp": "2026-10-04 14:10:49.735 UTC",
+      "source_entity": "192.168.1.99",
+      "target_entity": "c2-exfil-node.attacker.com",
+      "action_summary": "Automated DNS TXT record tunneling query towards known C2 exfiltration domain",
+      "evidence_event_ids": [
+        "EV-10149"
+      ]
+    },
+    {
+      "step_number": 47,
+      "title": "SSH High-Velocity Brute Force",
+      "mitre_technique": "T1110 (Brute Force)",
+      "timestamp": "2026-10-04 14:02:01.010 UTC",
+      "source_entity": "198.51.100.42",
+      "target_entity": "prod-bastion-01",
+      "action_summary": "Detected 100 rapid failed SSH authentication attempts from IP 198.51.100.42",
+      "evidence_event_ids": [
+        "EV-100001",
+        "EV-100002",
+        "EV-100003",
+        "EV-100004",
+        "EV-100005",
+        "EV-100006",
+        "EV-100007",
+        "EV-100008",
+        "EV-100009",
+        "EV-100010",
+        "EV-100011",
+        "EV-100012",
+        "EV-100013",
+        "EV-100014",
+        "EV-100015",
+        "EV-100016",
+        "EV-100017",
+        "EV-100018",
+        "EV-100019",
+        "EV-100020",
+        "EV-100021",
+        "EV-100022",
+        "EV-100023",
+        "EV-100024",
+        "EV-100025",
+        "EV-100026",
+        "EV-100027",
+        "EV-100028",
+        "EV-100029",
+        "EV-100030",
+        "EV-100031",
+        "EV-100032",
+        "EV-100033",
+        "EV-100034",
+        "EV-100035",
+        "EV-100036",
+        "EV-100037",
+        "EV-100038",
+        "EV-100039",
+        "EV-100040",
+        "EV-100041",
+        "EV-100042",
+        "EV-100043",
+        "EV-100044",
+        "EV-100045",
+        "EV-100046",
+        "EV-100047",
+        "EV-100048",
+        "EV-100049",
+        "EV-100050",
+        "EV-100051",
+        "EV-100052",
+        "EV-100053",
+        "EV-100054",
+        "EV-100055",
+        "EV-100056",
+        "EV-100057",
+        "EV-100058",
+        "EV-100059",
+        "EV-100060",
+        "EV-100061",
+        "EV-100062",
+        "EV-100063",
+        "EV-100064",
+        "EV-100065",
+        "EV-100066",
+        "EV-100067",
+        "EV-100068",
+        "EV-100069",
+        "EV-100070",
+        "EV-100071",
+        "EV-100072",
+        "EV-100073",
+        "EV-100074",
+        "EV-100075",
+        "EV-100076",
+        "EV-100077",
+        "EV-100078",
+        "EV-100079",
+        "EV-100080",
+        "EV-100081",
+        "EV-100082",
+        "EV-100083",
+        "EV-100084",
+        "EV-100085",
+        "EV-100086",
+        "EV-100087",
+        "EV-100088",
+        "EV-100089",
+        "EV-100090",
+        "EV-100091",
+        "EV-100092",
+        "EV-100093",
+        "EV-100094",
+        "EV-100095",
+        "EV-100096",
+        "EV-100097",
+        "EV-100098",
+        "EV-100099",
+        "EV-100100"
+      ]
+    }
+  ],
+  "alert_ids": [
+    "ALT-PRIV-ESC-EV-10102",
+    "ALT-PRIV-ESC-EV-10103",
+    "ALT-LAT-MOVE-EV-10104",
+    "ALT-EXFIL-EV-10107",
+    "ALT-EXFIL-EV-10108",
+    "ALT-EXFIL-EV-10109",
+    "ALT-EXFIL-EV-10110",
+    "ALT-EXFIL-EV-10111",
+    "ALT-EXFIL-EV-10112",
+    "ALT-EXFIL-EV-10113",
+    "ALT-EXFIL-EV-10114",
+    "ALT-EXFIL-EV-10115",
+    "ALT-EXFIL-EV-10116",
+    "ALT-EXFIL-EV-10117",
+    "ALT-EXFIL-EV-10118",
+    "ALT-EXFIL-EV-10119",
+    "ALT-EXFIL-EV-10120",
+    "ALT-EXFIL-EV-10121",
+    "ALT-EXFIL-EV-10122",
+    "ALT-EXFIL-EV-10123",
+    "ALT-EXFIL-EV-10124",
+    "ALT-EXFIL-EV-10125",
+    "ALT-EXFIL-EV-10126",
+    "ALT-EXFIL-EV-10127",
+    "ALT-EXFIL-EV-10128",
+    "ALT-EXFIL-EV-10129",
+    "ALT-EXFIL-EV-10130",
+    "ALT-EXFIL-EV-10131",
+    "ALT-EXFIL-EV-10132",
+    "ALT-EXFIL-EV-10133",
+    "ALT-EXFIL-EV-10134",
+    "ALT-EXFIL-EV-10135",
+    "ALT-EXFIL-EV-10136",
+    "ALT-EXFIL-EV-10137",
+    "ALT-EXFIL-EV-10138",
+    "ALT-EXFIL-EV-10139",
+    "ALT-EXFIL-EV-10140",
+    "ALT-EXFIL-EV-10141",
+    "ALT-EXFIL-EV-10142",
+    "ALT-EXFIL-EV-10143",
+    "ALT-EXFIL-EV-10144",
+    "ALT-EXFIL-EV-10145",
+    "ALT-EXFIL-EV-10146",
+    "ALT-EXFIL-EV-10147",
+    "ALT-EXFIL-EV-10148",
+    "ALT-EXFIL-EV-10149",
+    "ALT-BRUTE-198.51.100.42"
+  ],
+  "evidence_event_ids": [
+    "EV-10102",
+    "EV-10103",
+    "EV-10104",
+    "EV-10107",
+    "EV-10108",
+    "EV-10109",
+    "EV-10110",
+    "EV-10111",
+    "EV-10112",
+    "EV-10113",
+    "EV-10114",
+    "EV-10115",
+    "EV-10116",
+    "EV-10117",
+    "EV-10118",
+    "EV-10119",
+    "EV-10120",
+    "EV-10121",
+    "EV-10122",
+    "EV-10123",
+    "EV-10124",
+    "EV-10125",
+    "EV-10126",
+    "EV-10127",
+    "EV-10128",
+    "EV-10129",
+    "EV-10130",
+    "EV-10131",
+    "EV-10132",
+    "EV-10133",
+    "EV-10134",
+    "EV-10135",
+    "EV-10136",
+    "EV-10137",
+    "EV-10138",
+    "EV-10139",
+    "EV-10140",
+    "EV-10141",
+    "EV-10142",
+    "EV-10143",
+    "EV-10144",
+    "EV-10145",
+    "EV-10146",
+    "EV-10147",
+    "EV-10148",
+    "EV-10149",
+    "EV-100001",
+    "EV-100002",
+    "EV-100003",
+    "EV-100004",
+    "EV-100005",
+    "EV-100006",
+    "EV-100007",
+    "EV-100008",
+    "EV-100009",
+    "EV-100010",
+    "EV-100011",
+    "EV-100012",
+    "EV-100013",
+    "EV-100014",
+    "EV-100015",
+    "EV-100016",
+    "EV-100017",
+    "EV-100018",
+    "EV-100019",
+    "EV-100020",
+    "EV-100021",
+    "EV-100022",
+    "EV-100023",
+    "EV-100024",
+    "EV-100025",
+    "EV-100026",
+    "EV-100027",
+    "EV-100028",
+    "EV-100029",
+    "EV-100030",
+    "EV-100031",
+    "EV-100032",
+    "EV-100033",
+    "EV-100034",
+    "EV-100035",
+    "EV-100036",
+    "EV-100037",
+    "EV-100038",
+    "EV-100039",
+    "EV-100040",
+    "EV-100041",
+    "EV-100042",
+    "EV-100043",
+    "EV-100044",
+    "EV-100045",
+    "EV-100046",
+    "EV-100047",
+    "EV-100048",
+    "EV-100049",
+    "EV-100050",
+    "EV-100051",
+    "EV-100052",
+    "EV-100053",
+    "EV-100054",
+    "EV-100055",
+    "EV-100056",
+    "EV-100057",
+    "EV-100058",
+    "EV-100059",
+    "EV-100060",
+    "EV-100061",
+    "EV-100062",
+    "EV-100063",
+    "EV-100064",
+    "EV-100065",
+    "EV-100066",
+    "EV-100067",
+    "EV-100068",
+    "EV-100069",
+    "EV-100070",
+    "EV-100071",
+    "EV-100072",
+    "EV-100073",
+    "EV-100074",
+    "EV-100075",
+    "EV-100076",
+    "EV-100077",
+    "EV-100078",
+    "EV-100079",
+    "EV-100080",
+    "EV-100081",
+    "EV-100082",
+    "EV-100083",
+    "EV-100084",
+    "EV-100085",
+    "EV-100086",
+    "EV-100087",
+    "EV-100088",
+    "EV-100089",
+    "EV-100090",
+    "EV-100091",
+    "EV-100092",
+    "EV-100093",
+    "EV-100094",
+    "EV-100095",
+    "EV-100096",
+    "EV-100097",
+    "EV-100098",
+    "EV-100099",
+    "EV-100100"
+  ],
+  "cleared_decoys": [
+    {
+      "event_id": "EV-10101",
+      "timestamp": "2026-10-04 14:03:15.102 UTC",
+      "log_source": "auth_syslog",
+      "description": "sshd[4915]: Accepted password for sysadmin from 198.51.100.42 port 50101 ssh2 on...",
+      "reason_cleared": "Passed baseline threshold; routine operational background noise"
+    },
+    {
+      "event_id": "EV-10105",
+      "timestamp": "2026-10-04 14:07:05.330 UTC",
+      "log_source": "edr",
+      "description": "process_creation host=prod-db-01 parent=sshd process=/usr/bin/mysqldump cmd='mys...",
+      "reason_cleared": "Passed baseline threshold; routine operational background noise"
+    },
+    {
+      "event_id": "EV-10106",
+      "timestamp": "2026-10-04 14:08:11.901 UTC",
+      "log_source": "edr",
+      "description": "file_creation host=prod-db-01 filepath=/tmp/customer_vault.dump size=419430400 s...",
+      "reason_cleared": "Passed baseline threshold; routine operational background noise"
+    },
+    {
+      "event_id": "EV-BG-000001",
+      "timestamp": "2026-10-04 14:00:01.001 UTC",
+      "log_source": "web_nginx",
+      "description": "10.0.1.1 - - [04/Oct/2026:14:00:01] \"GET /api/v1/health HTTP/1.1\" 200 64...",
+      "reason_cleared": "Passed baseline threshold; routine operational background noise"
+    },
+    {
+      "event_id": "EV-BG-000002",
+      "timestamp": "2026-10-04 14:00:02.002 UTC",
+      "log_source": "k8s_audit",
+      "description": "k8s_event user=system:kube-scheduler verb=get resource=pods namespace=default st...",
+      "reason_cleared": "Passed baseline threshold; routine operational background noise"
+    }
+  ],
+  "scorecard": {
+    "total_raw_events": 52149,
+    "normalized_events": 52149,
+    "alerts_detected": 47,
+    "incidents_correlated": 1,
+    "decoys_cleared": 52003,
+    "noise_reduction_percentage": 99.72,
+    "citation_accuracy_percentage": 100.0,
+    "estimated_triage_minutes_saved": 45.3
+  }
+}

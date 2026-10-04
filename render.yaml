@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: traceback-engine
+    runtime: python
+    buildCommand: cd engine && pip install -r requirements.txt
+    startCommand: cd engine && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: ENVIRONMENT
+        value: production
+      - key: CORS_ORIGINS
+        value: "*"

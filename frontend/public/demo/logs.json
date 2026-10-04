@@ -1,0 +1,1205 @@
+{
+  "total_matched": 52149,
+  "logs": [
+    {
+      "event_id": "EV-100001",
+      "timestamp": "2026-10-04 14:02:01.010 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50001 ssh2"
+    },
+    {
+      "event_id": "EV-100002",
+      "timestamp": "2026-10-04 14:02:02.020 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50002 ssh2"
+    },
+    {
+      "event_id": "EV-100003",
+      "timestamp": "2026-10-04 14:02:03.030 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50003 ssh2"
+    },
+    {
+      "event_id": "EV-100004",
+      "timestamp": "2026-10-04 14:02:04.040 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50004 ssh2"
+    },
+    {
+      "event_id": "EV-100005",
+      "timestamp": "2026-10-04 14:02:05.050 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50005 ssh2"
+    },
+    {
+      "event_id": "EV-100006",
+      "timestamp": "2026-10-04 14:02:06.060 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50006 ssh2"
+    },
+    {
+      "event_id": "EV-100007",
+      "timestamp": "2026-10-04 14:02:07.070 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50007 ssh2"
+    },
+    {
+      "event_id": "EV-100008",
+      "timestamp": "2026-10-04 14:02:08.080 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50008 ssh2"
+    },
+    {
+      "event_id": "EV-100009",
+      "timestamp": "2026-10-04 14:02:09.090 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50009 ssh2"
+    },
+    {
+      "event_id": "EV-100010",
+      "timestamp": "2026-10-04 14:02:10.100 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50010 ssh2"
+    },
+    {
+      "event_id": "EV-100011",
+      "timestamp": "2026-10-04 14:02:11.110 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50011 ssh2"
+    },
+    {
+      "event_id": "EV-100012",
+      "timestamp": "2026-10-04 14:02:12.120 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50012 ssh2"
+    },
+    {
+      "event_id": "EV-100013",
+      "timestamp": "2026-10-04 14:02:13.130 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50013 ssh2"
+    },
+    {
+      "event_id": "EV-100014",
+      "timestamp": "2026-10-04 14:02:14.140 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50014 ssh2"
+    },
+    {
+      "event_id": "EV-100015",
+      "timestamp": "2026-10-04 14:02:15.150 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50015 ssh2"
+    },
+    {
+      "event_id": "EV-100016",
+      "timestamp": "2026-10-04 14:02:16.160 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50016 ssh2"
+    },
+    {
+      "event_id": "EV-100017",
+      "timestamp": "2026-10-04 14:02:17.170 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50017 ssh2"
+    },
+    {
+      "event_id": "EV-100018",
+      "timestamp": "2026-10-04 14:02:18.180 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50018 ssh2"
+    },
+    {
+      "event_id": "EV-100019",
+      "timestamp": "2026-10-04 14:02:19.190 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50019 ssh2"
+    },
+    {
+      "event_id": "EV-100020",
+      "timestamp": "2026-10-04 14:02:20.200 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50020 ssh2"
+    },
+    {
+      "event_id": "EV-100021",
+      "timestamp": "2026-10-04 14:02:21.210 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50021 ssh2"
+    },
+    {
+      "event_id": "EV-100022",
+      "timestamp": "2026-10-04 14:02:22.220 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50022 ssh2"
+    },
+    {
+      "event_id": "EV-100023",
+      "timestamp": "2026-10-04 14:02:23.230 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50023 ssh2"
+    },
+    {
+      "event_id": "EV-100024",
+      "timestamp": "2026-10-04 14:02:24.240 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50024 ssh2"
+    },
+    {
+      "event_id": "EV-100025",
+      "timestamp": "2026-10-04 14:02:25.250 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50025 ssh2"
+    },
+    {
+      "event_id": "EV-100026",
+      "timestamp": "2026-10-04 14:02:26.260 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50026 ssh2"
+    },
+    {
+      "event_id": "EV-100027",
+      "timestamp": "2026-10-04 14:02:27.270 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50027 ssh2"
+    },
+    {
+      "event_id": "EV-100028",
+      "timestamp": "2026-10-04 14:02:28.280 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50028 ssh2"
+    },
+    {
+      "event_id": "EV-100029",
+      "timestamp": "2026-10-04 14:02:29.290 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50029 ssh2"
+    },
+    {
+      "event_id": "EV-100030",
+      "timestamp": "2026-10-04 14:02:30.300 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50030 ssh2"
+    },
+    {
+      "event_id": "EV-100031",
+      "timestamp": "2026-10-04 14:02:31.310 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50031 ssh2"
+    },
+    {
+      "event_id": "EV-100032",
+      "timestamp": "2026-10-04 14:02:32.320 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50032 ssh2"
+    },
+    {
+      "event_id": "EV-100033",
+      "timestamp": "2026-10-04 14:02:33.330 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50033 ssh2"
+    },
+    {
+      "event_id": "EV-100034",
+      "timestamp": "2026-10-04 14:02:34.340 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50034 ssh2"
+    },
+    {
+      "event_id": "EV-100035",
+      "timestamp": "2026-10-04 14:02:35.350 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50035 ssh2"
+    },
+    {
+      "event_id": "EV-100036",
+      "timestamp": "2026-10-04 14:02:36.360 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50036 ssh2"
+    },
+    {
+      "event_id": "EV-100037",
+      "timestamp": "2026-10-04 14:02:37.370 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50037 ssh2"
+    },
+    {
+      "event_id": "EV-100038",
+      "timestamp": "2026-10-04 14:02:38.380 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50038 ssh2"
+    },
+    {
+      "event_id": "EV-100039",
+      "timestamp": "2026-10-04 14:02:39.390 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50039 ssh2"
+    },
+    {
+      "event_id": "EV-100040",
+      "timestamp": "2026-10-04 14:02:40.400 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50040 ssh2"
+    },
+    {
+      "event_id": "EV-100041",
+      "timestamp": "2026-10-04 14:02:41.410 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50041 ssh2"
+    },
+    {
+      "event_id": "EV-100042",
+      "timestamp": "2026-10-04 14:02:42.420 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50042 ssh2"
+    },
+    {
+      "event_id": "EV-100043",
+      "timestamp": "2026-10-04 14:02:43.430 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50043 ssh2"
+    },
+    {
+      "event_id": "EV-100044",
+      "timestamp": "2026-10-04 14:02:44.440 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50044 ssh2"
+    },
+    {
+      "event_id": "EV-100045",
+      "timestamp": "2026-10-04 14:02:45.450 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50045 ssh2"
+    },
+    {
+      "event_id": "EV-100046",
+      "timestamp": "2026-10-04 14:02:46.460 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50046 ssh2"
+    },
+    {
+      "event_id": "EV-100047",
+      "timestamp": "2026-10-04 14:02:47.470 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50047 ssh2"
+    },
+    {
+      "event_id": "EV-100048",
+      "timestamp": "2026-10-04 14:02:48.480 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50048 ssh2"
+    },
+    {
+      "event_id": "EV-100049",
+      "timestamp": "2026-10-04 14:02:49.490 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50049 ssh2"
+    },
+    {
+      "event_id": "EV-100050",
+      "timestamp": "2026-10-04 14:02:50.500 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50050 ssh2"
+    },
+    {
+      "event_id": "EV-100051",
+      "timestamp": "2026-10-04 14:02:51.510 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50051 ssh2"
+    },
+    {
+      "event_id": "EV-100052",
+      "timestamp": "2026-10-04 14:02:52.520 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50052 ssh2"
+    },
+    {
+      "event_id": "EV-100053",
+      "timestamp": "2026-10-04 14:02:53.530 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50053 ssh2"
+    },
+    {
+      "event_id": "EV-100054",
+      "timestamp": "2026-10-04 14:02:54.540 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50054 ssh2"
+    },
+    {
+      "event_id": "EV-100055",
+      "timestamp": "2026-10-04 14:02:55.550 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50055 ssh2"
+    },
+    {
+      "event_id": "EV-100056",
+      "timestamp": "2026-10-04 14:02:56.560 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50056 ssh2"
+    },
+    {
+      "event_id": "EV-100057",
+      "timestamp": "2026-10-04 14:02:57.570 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50057 ssh2"
+    },
+    {
+      "event_id": "EV-100058",
+      "timestamp": "2026-10-04 14:02:58.580 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50058 ssh2"
+    },
+    {
+      "event_id": "EV-100059",
+      "timestamp": "2026-10-04 14:02:59.590 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50059 ssh2"
+    },
+    {
+      "event_id": "EV-100060",
+      "timestamp": "2026-10-04 14:02:00.600 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50060 ssh2"
+    },
+    {
+      "event_id": "EV-100061",
+      "timestamp": "2026-10-04 14:02:01.610 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50061 ssh2"
+    },
+    {
+      "event_id": "EV-100062",
+      "timestamp": "2026-10-04 14:02:02.620 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50062 ssh2"
+    },
+    {
+      "event_id": "EV-100063",
+      "timestamp": "2026-10-04 14:02:03.630 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50063 ssh2"
+    },
+    {
+      "event_id": "EV-100064",
+      "timestamp": "2026-10-04 14:02:04.640 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50064 ssh2"
+    },
+    {
+      "event_id": "EV-100065",
+      "timestamp": "2026-10-04 14:02:05.650 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50065 ssh2"
+    },
+    {
+      "event_id": "EV-100066",
+      "timestamp": "2026-10-04 14:02:06.660 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50066 ssh2"
+    },
+    {
+      "event_id": "EV-100067",
+      "timestamp": "2026-10-04 14:02:07.670 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50067 ssh2"
+    },
+    {
+      "event_id": "EV-100068",
+      "timestamp": "2026-10-04 14:02:08.680 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50068 ssh2"
+    },
+    {
+      "event_id": "EV-100069",
+      "timestamp": "2026-10-04 14:02:09.690 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50069 ssh2"
+    },
+    {
+      "event_id": "EV-100070",
+      "timestamp": "2026-10-04 14:02:10.700 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50070 ssh2"
+    },
+    {
+      "event_id": "EV-100071",
+      "timestamp": "2026-10-04 14:02:11.710 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50071 ssh2"
+    },
+    {
+      "event_id": "EV-100072",
+      "timestamp": "2026-10-04 14:02:12.720 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50072 ssh2"
+    },
+    {
+      "event_id": "EV-100073",
+      "timestamp": "2026-10-04 14:02:13.730 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50073 ssh2"
+    },
+    {
+      "event_id": "EV-100074",
+      "timestamp": "2026-10-04 14:02:14.740 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50074 ssh2"
+    },
+    {
+      "event_id": "EV-100075",
+      "timestamp": "2026-10-04 14:02:15.750 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50075 ssh2"
+    },
+    {
+      "event_id": "EV-100076",
+      "timestamp": "2026-10-04 14:02:16.760 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50076 ssh2"
+    },
+    {
+      "event_id": "EV-100077",
+      "timestamp": "2026-10-04 14:02:17.770 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50077 ssh2"
+    },
+    {
+      "event_id": "EV-100078",
+      "timestamp": "2026-10-04 14:02:18.780 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50078 ssh2"
+    },
+    {
+      "event_id": "EV-100079",
+      "timestamp": "2026-10-04 14:02:19.790 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50079 ssh2"
+    },
+    {
+      "event_id": "EV-100080",
+      "timestamp": "2026-10-04 14:02:20.800 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50080 ssh2"
+    },
+    {
+      "event_id": "EV-100081",
+      "timestamp": "2026-10-04 14:02:21.810 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50081 ssh2"
+    },
+    {
+      "event_id": "EV-100082",
+      "timestamp": "2026-10-04 14:02:22.820 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50082 ssh2"
+    },
+    {
+      "event_id": "EV-100083",
+      "timestamp": "2026-10-04 14:02:23.830 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50083 ssh2"
+    },
+    {
+      "event_id": "EV-100084",
+      "timestamp": "2026-10-04 14:02:24.840 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50084 ssh2"
+    },
+    {
+      "event_id": "EV-100085",
+      "timestamp": "2026-10-04 14:02:25.850 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50085 ssh2"
+    },
+    {
+      "event_id": "EV-100086",
+      "timestamp": "2026-10-04 14:02:26.860 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50086 ssh2"
+    },
+    {
+      "event_id": "EV-100087",
+      "timestamp": "2026-10-04 14:02:27.870 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50087 ssh2"
+    },
+    {
+      "event_id": "EV-100088",
+      "timestamp": "2026-10-04 14:02:28.880 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50088 ssh2"
+    },
+    {
+      "event_id": "EV-100089",
+      "timestamp": "2026-10-04 14:02:29.890 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50089 ssh2"
+    },
+    {
+      "event_id": "EV-100090",
+      "timestamp": "2026-10-04 14:02:30.900 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50090 ssh2"
+    },
+    {
+      "event_id": "EV-100091",
+      "timestamp": "2026-10-04 14:02:31.910 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50091 ssh2"
+    },
+    {
+      "event_id": "EV-100092",
+      "timestamp": "2026-10-04 14:02:32.920 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50092 ssh2"
+    },
+    {
+      "event_id": "EV-100093",
+      "timestamp": "2026-10-04 14:02:33.930 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50093 ssh2"
+    },
+    {
+      "event_id": "EV-100094",
+      "timestamp": "2026-10-04 14:02:34.940 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50094 ssh2"
+    },
+    {
+      "event_id": "EV-100095",
+      "timestamp": "2026-10-04 14:02:35.950 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50095 ssh2"
+    },
+    {
+      "event_id": "EV-100096",
+      "timestamp": "2026-10-04 14:02:36.960 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50096 ssh2"
+    },
+    {
+      "event_id": "EV-100097",
+      "timestamp": "2026-10-04 14:02:37.970 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50097 ssh2"
+    },
+    {
+      "event_id": "EV-100098",
+      "timestamp": "2026-10-04 14:02:38.980 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50098 ssh2"
+    },
+    {
+      "event_id": "EV-100099",
+      "timestamp": "2026-10-04 14:02:39.990 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50099 ssh2"
+    },
+    {
+      "event_id": "EV-100100",
+      "timestamp": "2026-10-04 14:02:40.1000 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4912]: Failed password for invalid user admin from 198.51.100.42 port 50100 ssh2"
+    },
+    {
+      "event_id": "EV-10101",
+      "timestamp": "2026-10-04 14:03:15.102 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[4915]: Accepted password for sysadmin from 198.51.100.42 port 50101 ssh2 on host prod-bastion-01"
+    },
+    {
+      "event_id": "EV-10102",
+      "timestamp": "2026-10-04 14:04:02.441 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sudo: sysadmin : TTY=pts/0 ; PWD=/home/sysadmin ; USER=root ; COMMAND=/bin/bash"
+    },
+    {
+      "event_id": "EV-10103",
+      "timestamp": "2026-10-04 14:04:12.890 UTC",
+      "log_source": "edr",
+      "raw_text": "process_creation host=prod-bastion-01 parent=/bin/bash process=/usr/bin/mimikatz cmd='mimikatz.exe securlsa::logonpasswords' pid=10492"
+    },
+    {
+      "event_id": "EV-10104",
+      "timestamp": "2026-10-04 14:06:22.115 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "sshd[8812]: Accepted publickey for root from 192.168.1.45 (prod-bastion-01) port 42100 ssh2 on host prod-db-01"
+    },
+    {
+      "event_id": "EV-10105",
+      "timestamp": "2026-10-04 14:07:05.330 UTC",
+      "log_source": "edr",
+      "raw_text": "process_creation host=prod-db-01 parent=sshd process=/usr/bin/mysqldump cmd='mysqldump -u root --all-databases > /tmp/customer_vault.dump' pid=8890"
+    },
+    {
+      "event_id": "EV-10106",
+      "timestamp": "2026-10-04 14:08:11.901 UTC",
+      "log_source": "edr",
+      "raw_text": "file_creation host=prod-db-01 filepath=/tmp/customer_vault.dump size=419430400 sha256=a4f102c98b..."
+    },
+    {
+      "event_id": "EV-10107",
+      "timestamp": "2026-10-04 14:10:07.105 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-007.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10108",
+      "timestamp": "2026-10-04 14:10:08.120 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-008.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10109",
+      "timestamp": "2026-10-04 14:10:09.135 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-009.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10110",
+      "timestamp": "2026-10-04 14:10:10.150 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-010.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10111",
+      "timestamp": "2026-10-04 14:10:11.165 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-011.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10112",
+      "timestamp": "2026-10-04 14:10:12.180 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-012.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10113",
+      "timestamp": "2026-10-04 14:10:13.195 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-013.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10114",
+      "timestamp": "2026-10-04 14:10:14.210 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-014.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10115",
+      "timestamp": "2026-10-04 14:10:15.225 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-015.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10116",
+      "timestamp": "2026-10-04 14:10:16.240 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-016.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10117",
+      "timestamp": "2026-10-04 14:10:17.255 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-017.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10118",
+      "timestamp": "2026-10-04 14:10:18.270 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-018.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10119",
+      "timestamp": "2026-10-04 14:10:19.285 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-019.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10120",
+      "timestamp": "2026-10-04 14:10:20.300 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-020.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10121",
+      "timestamp": "2026-10-04 14:10:21.315 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-021.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10122",
+      "timestamp": "2026-10-04 14:10:22.330 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-022.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10123",
+      "timestamp": "2026-10-04 14:10:23.345 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-023.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10124",
+      "timestamp": "2026-10-04 14:10:24.360 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-024.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10125",
+      "timestamp": "2026-10-04 14:10:25.375 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-025.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10126",
+      "timestamp": "2026-10-04 14:10:26.390 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-026.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10127",
+      "timestamp": "2026-10-04 14:10:27.405 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-027.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10128",
+      "timestamp": "2026-10-04 14:10:28.420 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-028.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10129",
+      "timestamp": "2026-10-04 14:10:29.435 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-029.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10130",
+      "timestamp": "2026-10-04 14:10:30.450 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-030.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10131",
+      "timestamp": "2026-10-04 14:10:31.465 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-031.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10132",
+      "timestamp": "2026-10-04 14:10:32.480 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-032.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10133",
+      "timestamp": "2026-10-04 14:10:33.495 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-033.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10134",
+      "timestamp": "2026-10-04 14:10:34.510 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-034.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10135",
+      "timestamp": "2026-10-04 14:10:35.525 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-035.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10136",
+      "timestamp": "2026-10-04 14:10:36.540 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-036.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10137",
+      "timestamp": "2026-10-04 14:10:37.555 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-037.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10138",
+      "timestamp": "2026-10-04 14:10:38.570 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-038.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10139",
+      "timestamp": "2026-10-04 14:10:39.585 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-039.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10140",
+      "timestamp": "2026-10-04 14:10:40.600 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-040.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10141",
+      "timestamp": "2026-10-04 14:10:41.615 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-041.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10142",
+      "timestamp": "2026-10-04 14:10:42.630 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-042.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10143",
+      "timestamp": "2026-10-04 14:10:43.645 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-043.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10144",
+      "timestamp": "2026-10-04 14:10:44.660 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-044.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10145",
+      "timestamp": "2026-10-04 14:10:45.675 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-045.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10146",
+      "timestamp": "2026-10-04 14:10:46.690 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-046.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10147",
+      "timestamp": "2026-10-04 14:10:47.705 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-047.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10148",
+      "timestamp": "2026-10-04 14:10:48.720 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-048.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-10149",
+      "timestamp": "2026-10-04 14:10:49.735 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=192.168.1.99 query=chunk-049.a4f102c9.c2-exfil-node.attacker.com record_type=TXT response=NOERROR"
+    },
+    {
+      "event_id": "EV-BG-000001",
+      "timestamp": "2026-10-04 14:00:01.001 UTC",
+      "log_source": "web_nginx",
+      "raw_text": "10.0.1.1 - - [04/Oct/2026:14:00:01] \"GET /api/v1/health HTTP/1.1\" 200 64"
+    },
+    {
+      "event_id": "EV-BG-000002",
+      "timestamp": "2026-10-04 14:00:02.002 UTC",
+      "log_source": "k8s_audit",
+      "raw_text": "k8s_event user=system:kube-scheduler verb=get resource=pods namespace=default status=200"
+    },
+    {
+      "event_id": "EV-BG-000003",
+      "timestamp": "2026-10-04 14:00:03.003 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=10.0.1.12 query=api.internal.service record_type=A response=10.0.1.20"
+    },
+    {
+      "event_id": "EV-BG-000004",
+      "timestamp": "2026-10-04 14:00:04.004 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "cron[1029]: (root) CMD (/usr/local/bin/check_disk_space.sh > /dev/null 2>&1)"
+    },
+    {
+      "event_id": "EV-BG-000005",
+      "timestamp": "2026-10-04 14:00:05.005 UTC",
+      "log_source": "firewall",
+      "raw_text": "firewall_action ALLOW src=10.0.5.5 dst=10.0.1.50 dst_port=443 proto=TCP bytes=1420"
+    },
+    {
+      "event_id": "EV-BG-000006",
+      "timestamp": "2026-10-04 14:00:06.006 UTC",
+      "log_source": "web_nginx",
+      "raw_text": "10.0.6.6 - - [04/Oct/2026:14:00:06] \"GET /api/v1/health HTTP/1.1\" 200 64"
+    },
+    {
+      "event_id": "EV-BG-000007",
+      "timestamp": "2026-10-04 14:00:07.007 UTC",
+      "log_source": "k8s_audit",
+      "raw_text": "k8s_event user=system:kube-scheduler verb=get resource=pods namespace=default status=200"
+    },
+    {
+      "event_id": "EV-BG-000008",
+      "timestamp": "2026-10-04 14:00:08.008 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=10.0.1.12 query=api.internal.service record_type=A response=10.0.1.20"
+    },
+    {
+      "event_id": "EV-BG-000009",
+      "timestamp": "2026-10-04 14:00:09.009 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "cron[1029]: (root) CMD (/usr/local/bin/check_disk_space.sh > /dev/null 2>&1)"
+    },
+    {
+      "event_id": "EV-BG-000010",
+      "timestamp": "2026-10-04 14:00:10.010 UTC",
+      "log_source": "firewall",
+      "raw_text": "firewall_action ALLOW src=10.0.10.10 dst=10.0.1.50 dst_port=443 proto=TCP bytes=1420"
+    },
+    {
+      "event_id": "EV-BG-000011",
+      "timestamp": "2026-10-04 14:00:11.011 UTC",
+      "log_source": "web_nginx",
+      "raw_text": "10.0.11.11 - - [04/Oct/2026:14:00:11] \"GET /api/v1/health HTTP/1.1\" 200 64"
+    },
+    {
+      "event_id": "EV-BG-000012",
+      "timestamp": "2026-10-04 14:00:12.012 UTC",
+      "log_source": "k8s_audit",
+      "raw_text": "k8s_event user=system:kube-scheduler verb=get resource=pods namespace=default status=200"
+    },
+    {
+      "event_id": "EV-BG-000013",
+      "timestamp": "2026-10-04 14:00:13.013 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=10.0.1.12 query=api.internal.service record_type=A response=10.0.1.20"
+    },
+    {
+      "event_id": "EV-BG-000014",
+      "timestamp": "2026-10-04 14:00:14.014 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "cron[1029]: (root) CMD (/usr/local/bin/check_disk_space.sh > /dev/null 2>&1)"
+    },
+    {
+      "event_id": "EV-BG-000015",
+      "timestamp": "2026-10-04 14:00:15.015 UTC",
+      "log_source": "firewall",
+      "raw_text": "firewall_action ALLOW src=10.0.15.15 dst=10.0.1.50 dst_port=443 proto=TCP bytes=1420"
+    },
+    {
+      "event_id": "EV-BG-000016",
+      "timestamp": "2026-10-04 14:00:16.016 UTC",
+      "log_source": "web_nginx",
+      "raw_text": "10.0.16.16 - - [04/Oct/2026:14:00:16] \"GET /api/v1/health HTTP/1.1\" 200 64"
+    },
+    {
+      "event_id": "EV-BG-000017",
+      "timestamp": "2026-10-04 14:00:17.017 UTC",
+      "log_source": "k8s_audit",
+      "raw_text": "k8s_event user=system:kube-scheduler verb=get resource=pods namespace=default status=200"
+    },
+    {
+      "event_id": "EV-BG-000018",
+      "timestamp": "2026-10-04 14:00:18.018 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=10.0.1.12 query=api.internal.service record_type=A response=10.0.1.20"
+    },
+    {
+      "event_id": "EV-BG-000019",
+      "timestamp": "2026-10-04 14:00:19.019 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "cron[1029]: (root) CMD (/usr/local/bin/check_disk_space.sh > /dev/null 2>&1)"
+    },
+    {
+      "event_id": "EV-BG-000020",
+      "timestamp": "2026-10-04 14:00:20.020 UTC",
+      "log_source": "firewall",
+      "raw_text": "firewall_action ALLOW src=10.0.20.20 dst=10.0.1.50 dst_port=443 proto=TCP bytes=1420"
+    },
+    {
+      "event_id": "EV-BG-000021",
+      "timestamp": "2026-10-04 14:00:21.021 UTC",
+      "log_source": "web_nginx",
+      "raw_text": "10.0.21.21 - - [04/Oct/2026:14:00:21] \"GET /api/v1/health HTTP/1.1\" 200 64"
+    },
+    {
+      "event_id": "EV-BG-000022",
+      "timestamp": "2026-10-04 14:00:22.022 UTC",
+      "log_source": "k8s_audit",
+      "raw_text": "k8s_event user=system:kube-scheduler verb=get resource=pods namespace=default status=200"
+    },
+    {
+      "event_id": "EV-BG-000023",
+      "timestamp": "2026-10-04 14:00:23.023 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=10.0.1.12 query=api.internal.service record_type=A response=10.0.1.20"
+    },
+    {
+      "event_id": "EV-BG-000024",
+      "timestamp": "2026-10-04 14:00:24.024 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "cron[1029]: (root) CMD (/usr/local/bin/check_disk_space.sh > /dev/null 2>&1)"
+    },
+    {
+      "event_id": "EV-BG-000025",
+      "timestamp": "2026-10-04 14:00:25.025 UTC",
+      "log_source": "firewall",
+      "raw_text": "firewall_action ALLOW src=10.0.25.25 dst=10.0.1.50 dst_port=443 proto=TCP bytes=1420"
+    },
+    {
+      "event_id": "EV-BG-000026",
+      "timestamp": "2026-10-04 14:00:26.026 UTC",
+      "log_source": "web_nginx",
+      "raw_text": "10.0.26.26 - - [04/Oct/2026:14:00:26] \"GET /api/v1/health HTTP/1.1\" 200 64"
+    },
+    {
+      "event_id": "EV-BG-000027",
+      "timestamp": "2026-10-04 14:00:27.027 UTC",
+      "log_source": "k8s_audit",
+      "raw_text": "k8s_event user=system:kube-scheduler verb=get resource=pods namespace=default status=200"
+    },
+    {
+      "event_id": "EV-BG-000028",
+      "timestamp": "2026-10-04 14:00:28.028 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=10.0.1.12 query=api.internal.service record_type=A response=10.0.1.20"
+    },
+    {
+      "event_id": "EV-BG-000029",
+      "timestamp": "2026-10-04 14:00:29.029 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "cron[1029]: (root) CMD (/usr/local/bin/check_disk_space.sh > /dev/null 2>&1)"
+    },
+    {
+      "event_id": "EV-BG-000030",
+      "timestamp": "2026-10-04 14:00:30.030 UTC",
+      "log_source": "firewall",
+      "raw_text": "firewall_action ALLOW src=10.0.30.30 dst=10.0.1.50 dst_port=443 proto=TCP bytes=1420"
+    },
+    {
+      "event_id": "EV-BG-000031",
+      "timestamp": "2026-10-04 14:00:31.031 UTC",
+      "log_source": "web_nginx",
+      "raw_text": "10.0.31.31 - - [04/Oct/2026:14:00:31] \"GET /api/v1/health HTTP/1.1\" 200 64"
+    },
+    {
+      "event_id": "EV-BG-000032",
+      "timestamp": "2026-10-04 14:00:32.032 UTC",
+      "log_source": "k8s_audit",
+      "raw_text": "k8s_event user=system:kube-scheduler verb=get resource=pods namespace=default status=200"
+    },
+    {
+      "event_id": "EV-BG-000033",
+      "timestamp": "2026-10-04 14:00:33.033 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=10.0.1.12 query=api.internal.service record_type=A response=10.0.1.20"
+    },
+    {
+      "event_id": "EV-BG-000034",
+      "timestamp": "2026-10-04 14:00:34.034 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "cron[1029]: (root) CMD (/usr/local/bin/check_disk_space.sh > /dev/null 2>&1)"
+    },
+    {
+      "event_id": "EV-BG-000035",
+      "timestamp": "2026-10-04 14:00:35.035 UTC",
+      "log_source": "firewall",
+      "raw_text": "firewall_action ALLOW src=10.0.35.35 dst=10.0.1.50 dst_port=443 proto=TCP bytes=1420"
+    },
+    {
+      "event_id": "EV-BG-000036",
+      "timestamp": "2026-10-04 14:00:36.036 UTC",
+      "log_source": "web_nginx",
+      "raw_text": "10.0.36.36 - - [04/Oct/2026:14:00:36] \"GET /api/v1/health HTTP/1.1\" 200 64"
+    },
+    {
+      "event_id": "EV-BG-000037",
+      "timestamp": "2026-10-04 14:00:37.037 UTC",
+      "log_source": "k8s_audit",
+      "raw_text": "k8s_event user=system:kube-scheduler verb=get resource=pods namespace=default status=200"
+    },
+    {
+      "event_id": "EV-BG-000038",
+      "timestamp": "2026-10-04 14:00:38.038 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=10.0.1.12 query=api.internal.service record_type=A response=10.0.1.20"
+    },
+    {
+      "event_id": "EV-BG-000039",
+      "timestamp": "2026-10-04 14:00:39.039 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "cron[1029]: (root) CMD (/usr/local/bin/check_disk_space.sh > /dev/null 2>&1)"
+    },
+    {
+      "event_id": "EV-BG-000040",
+      "timestamp": "2026-10-04 14:00:40.040 UTC",
+      "log_source": "firewall",
+      "raw_text": "firewall_action ALLOW src=10.0.40.40 dst=10.0.1.50 dst_port=443 proto=TCP bytes=1420"
+    },
+    {
+      "event_id": "EV-BG-000041",
+      "timestamp": "2026-10-04 14:00:41.041 UTC",
+      "log_source": "web_nginx",
+      "raw_text": "10.0.41.41 - - [04/Oct/2026:14:00:41] \"GET /api/v1/health HTTP/1.1\" 200 64"
+    },
+    {
+      "event_id": "EV-BG-000042",
+      "timestamp": "2026-10-04 14:00:42.042 UTC",
+      "log_source": "k8s_audit",
+      "raw_text": "k8s_event user=system:kube-scheduler verb=get resource=pods namespace=default status=200"
+    },
+    {
+      "event_id": "EV-BG-000043",
+      "timestamp": "2026-10-04 14:00:43.043 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=10.0.1.12 query=api.internal.service record_type=A response=10.0.1.20"
+    },
+    {
+      "event_id": "EV-BG-000044",
+      "timestamp": "2026-10-04 14:00:44.044 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "cron[1029]: (root) CMD (/usr/local/bin/check_disk_space.sh > /dev/null 2>&1)"
+    },
+    {
+      "event_id": "EV-BG-000045",
+      "timestamp": "2026-10-04 14:00:45.045 UTC",
+      "log_source": "firewall",
+      "raw_text": "firewall_action ALLOW src=10.0.45.45 dst=10.0.1.50 dst_port=443 proto=TCP bytes=1420"
+    },
+    {
+      "event_id": "EV-BG-000046",
+      "timestamp": "2026-10-04 14:00:46.046 UTC",
+      "log_source": "web_nginx",
+      "raw_text": "10.0.46.46 - - [04/Oct/2026:14:00:46] \"GET /api/v1/health HTTP/1.1\" 200 64"
+    },
+    {
+      "event_id": "EV-BG-000047",
+      "timestamp": "2026-10-04 14:00:47.047 UTC",
+      "log_source": "k8s_audit",
+      "raw_text": "k8s_event user=system:kube-scheduler verb=get resource=pods namespace=default status=200"
+    },
+    {
+      "event_id": "EV-BG-000048",
+      "timestamp": "2026-10-04 14:00:48.048 UTC",
+      "log_source": "dns",
+      "raw_text": "dns_query client=10.0.1.12 query=api.internal.service record_type=A response=10.0.1.20"
+    },
+    {
+      "event_id": "EV-BG-000049",
+      "timestamp": "2026-10-04 14:00:49.049 UTC",
+      "log_source": "auth_syslog",
+      "raw_text": "cron[1029]: (root) CMD (/usr/local/bin/check_disk_space.sh > /dev/null 2>&1)"
+    },
+    {
+      "event_id": "EV-BG-000050",
+      "timestamp": "2026-10-04 14:00:50.050 UTC",
+      "log_source": "firewall",
+      "raw_text": "firewall_action ALLOW src=10.0.50.50 dst=10.0.1.50 dst_port=443 proto=TCP bytes=1420"
+    },
+    {
+      "event_id": "EV-BG-000051",
+      "timestamp": "2026-10-04 14:00:51.051 UTC",
+      "log_source": "web_nginx",
+      "raw_text": "10.0.51.51 - - [04/Oct/2026:14:00:51] \"GET /api/v1/health HTTP/1.1\" 200 64"
+    }
+  ]
+}

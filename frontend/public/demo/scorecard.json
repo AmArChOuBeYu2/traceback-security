@@ -1,0 +1,10 @@
+{
+  "total_raw_events": 52149,
+  "normalized_events": 52149,
+  "alerts_detected": 47,
+  "incidents_correlated": 1,
+  "decoys_cleared": 52003,
+  "noise_reduction_percentage": 99.72,
+  "citation_accuracy_percentage": 100.0,
+  "estimated_triage_minutes_saved": 45.0
+}

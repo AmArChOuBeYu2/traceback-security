@@ -1,0 +1,160 @@
+{
+  "incident_id": "INC-1191",
+  "title": "Multi-Stage Attack Chain (1 Rule Detections)",
+  "severity": "HIGH",
+  "confidence": 0.85,
+  "start_time": "2026-10-04 15:00:10.000 UTC",
+  "end_time": "2026-10-04 15:00:10.000 UTC",
+  "attacker_ip": "203.0.113.195",
+  "compromised_hosts": [
+    "prod-bastion-01"
+  ],
+  "compromised_users": [
+    "sysadmin",
+    "root"
+  ],
+  "narrative": [
+    {
+      "claim_id": "CLM-001",
+      "sentence": "[T1110 (Brute Force)] Detected 23 rapid failed SSH authentication attempts from IP 203.0.113.195",
+      "evidence_event_ids": [
+        "EV-HELD-002",
+        "EV-HELD-003",
+        "EV-HELD-004",
+        "EV-HELD-005",
+        "EV-HELD-006",
+        "EV-HELD-007",
+        "EV-HELD-008",
+        "EV-HELD-009",
+        "EV-HELD-010",
+        "EV-HELD-011",
+        "EV-HELD-012",
+        "EV-HELD-013",
+        "EV-HELD-014",
+        "EV-HELD-015",
+        "EV-HELD-016",
+        "EV-HELD-017",
+        "EV-HELD-018",
+        "EV-HELD-019",
+        "EV-HELD-020",
+        "EV-HELD-021",
+        "EV-HELD-022",
+        "EV-HELD-023",
+        "EV-HELD-024"
+      ],
+      "is_verified": true,
+      "mitre_stage": "SSH"
+    }
+  ],
+  "replay_steps": [
+    {
+      "step_number": 1,
+      "title": "SSH High-Velocity Brute Force",
+      "mitre_technique": "T1110 (Brute Force)",
+      "timestamp": "2026-10-04 15:00:10.000 UTC",
+      "source_entity": "203.0.113.195",
+      "target_entity": "prod-bastion-01",
+      "action_summary": "Detected 23 rapid failed SSH authentication attempts from IP 203.0.113.195",
+      "evidence_event_ids": [
+        "EV-HELD-002",
+        "EV-HELD-003",
+        "EV-HELD-004",
+        "EV-HELD-005",
+        "EV-HELD-006",
+        "EV-HELD-007",
+        "EV-HELD-008",
+        "EV-HELD-009",
+        "EV-HELD-010",
+        "EV-HELD-011",
+        "EV-HELD-012",
+        "EV-HELD-013",
+        "EV-HELD-014",
+        "EV-HELD-015",
+        "EV-HELD-016",
+        "EV-HELD-017",
+        "EV-HELD-018",
+        "EV-HELD-019",
+        "EV-HELD-020",
+        "EV-HELD-021",
+        "EV-HELD-022",
+        "EV-HELD-023",
+        "EV-HELD-024"
+      ]
+    }
+  ],
+  "alert_ids": [
+    "ALT-BRUTE-203.0.113.195"
+  ],
+  "evidence_event_ids": [
+    "EV-HELD-002",
+    "EV-HELD-003",
+    "EV-HELD-004",
+    "EV-HELD-005",
+    "EV-HELD-006",
+    "EV-HELD-007",
+    "EV-HELD-008",
+    "EV-HELD-009",
+    "EV-HELD-010",
+    "EV-HELD-011",
+    "EV-HELD-012",
+    "EV-HELD-013",
+    "EV-HELD-014",
+    "EV-HELD-015",
+    "EV-HELD-016",
+    "EV-HELD-017",
+    "EV-HELD-018",
+    "EV-HELD-019",
+    "EV-HELD-020",
+    "EV-HELD-021",
+    "EV-HELD-022",
+    "EV-HELD-023",
+    "EV-HELD-024"
+  ],
+  "cleared_decoys": [
+    {
+      "event_id": "EV-HELD-001",
+      "timestamp": "2026-10-04 15:00:10.000 UTC",
+      "log_source": "auth_syslog",
+      "description": "sshd[9012]: Accepted password for secops_admin from 203.0.113.195 (country: RO) ...",
+      "reason_cleared": "Passed baseline threshold; routine operational background noise"
+    },
+    {
+      "event_id": "EV-HELD-025",
+      "timestamp": "2026-10-04 15:05:00.000 UTC",
+      "log_source": "cloudtrail",
+      "description": "cloudtrail event=CreateAccessKey user=secops_admin src_ip=203.0.113.195 key_id=A...",
+      "reason_cleared": "Passed baseline threshold; routine operational background noise"
+    },
+    {
+      "event_id": "EV-HELD-026",
+      "timestamp": "2026-10-04 15:08:30.000 UTC",
+      "log_source": "cloudtrail",
+      "description": "cloudtrail event=GetObject bucket=company-financial-vault key=q3_reports.tar.gz ...",
+      "reason_cleared": "Passed baseline threshold; routine operational background noise"
+    },
+    {
+      "event_id": "EV-HELD-BG-00001",
+      "timestamp": "2026-10-04 15:00:01.000 UTC",
+      "log_source": "firewall",
+      "description": "firewall_action ALLOW src=10.0.0.1 dst=10.0.1.1 dst_port=80 proto=TCP...",
+      "reason_cleared": "Passed baseline threshold; routine operational background noise"
+    },
+    {
+      "event_id": "EV-HELD-BG-00002",
+      "timestamp": "2026-10-04 15:00:02.000 UTC",
+      "log_source": "firewall",
+      "description": "firewall_action ALLOW src=10.0.0.2 dst=10.0.1.1 dst_port=80 proto=TCP...",
+      "reason_cleared": "Passed baseline threshold; routine operational background noise"
+    }
+  ],
+  "scorecard": {
+    "total_raw_events": 10026,
+    "normalized_events": 10026,
+    "alerts_detected": 1,
+    "incidents_correlated": 1,
+    "decoys_cleared": 10003,
+    "noise_reduction_percentage": 99.77,
+    "citation_accuracy_percentage": 100.0,
+    "estimated_triage_minutes_saved": 8.7
+  }
+}

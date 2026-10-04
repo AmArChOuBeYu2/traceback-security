@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #080c14;
+  --surface: #0f172a;
+  --surface-hover: #1e293b;
+  --border: #1e293b;
+  --cyan: #00f3ff;
+  --emerald: #02c39a;
+  --amber: #ffb703;
+  --red: #ff0055;
+  --purple: #9d4edd;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  color: #e2e8f0;
+  background: var(--bg);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--cyan); }
+
+/* ─── Grid overlay ──────────────────────────────────── */
+.bg-cyber-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.015) 1px, transparent 1px);
+}
+
+/* ─── Glow effects ──────────────────────────────────── */
+.shadow-cyan-glow { box-shadow: 0 0 24px rgba(0,243,255,0.15), 0 0 4px rgba(0,243,255,0.3); }
+.shadow-red-glow { box-shadow: 0 0 24px rgba(255,0,85,0.15), 0 0 4px rgba(255,0,85,0.3); }
+.shadow-emerald-glow { box-shadow: 0 0 24px rgba(2,195,154,0.15), 0 0 4px rgba(2,195,154,0.3); }
+.shadow-amber-glow { box-shadow: 0 0 24px rgba(255,183,3,0.15), 0 0 4px rgba(255,183,3,0.3); }
+
+/* ─── Skeleton shimmer ──────────────────────────────── */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #0f172a 0%, #1e293b 40%, #0f172a 80%);
+  background-size: 800px 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+/* ─── Scan line ─────────────────────────────────────── */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.scan-line::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0,243,255,0.08), transparent);
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+}
+
+/* ─── Pulse ring ────────────────────────────────────── */
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+.pulse-ring { animation: pulse-ring 1.5s ease-out infinite; }
+
+/* ─── Number counter ────────────────────────────────── */
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-count { animation: count-up 0.4s ease-out forwards; }
+
+/* ─── ReactFlow overrides ───────────────────────────── */
+.react-flow__node { font-family: 'JetBrains Mono', monospace !important; }
+.react-flow__background { opacity: 0.3; }
+.react-flow__controls button {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: #94a3b8 !important;
+}
+.react-flow__controls button:hover {
+  background: var(--surface-hover) !important;
+  color: var(--cyan) !important;
+}
