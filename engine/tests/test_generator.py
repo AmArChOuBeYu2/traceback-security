@@ -41,15 +41,27 @@ def test_attack_and_decoy_labels():
 
 
 def test_heldout_dataset_variant():
-    main_gen = SyntheticLogGenerator(seed=42, total_target_events=1000)
-    main_events, _ = main_gen.generate()
+    main_gen = SyntheticLogGenerator(seed=42, total_target_events=52149)
+    main_events, main_manifest = main_gen.generate()
 
-    heldout_gen = SyntheticLogGenerator(seed=1337, total_target_events=1000)
-    heldout_events, _ = heldout_gen.generate()
+    heldout_gen = SyntheticLogGenerator(seed=1337, total_target_events=52149)
+    heldout_events, heldout_manifest = heldout_gen.generate()
 
     main_ips = {e.src_ip for e in main_events if e.is_attack}
     heldout_ips = {e.src_ip for e in heldout_events if e.is_attack}
 
+    # 1. Assert distinct IP and entity sets
     assert "198.51.100.42" in main_ips
     assert "203.0.113.199" in heldout_ips
     assert main_ips != heldout_ips
+
+    # 2. Assert distinct attack event counts & decoy distribution
+    assert main_manifest.attack_events_count != heldout_manifest.attack_events_count
+    assert main_manifest.decoy_events_count != heldout_manifest.decoy_events_count
+
+    # 3. Assert distinct stage event counts
+    main_spray_count = next(s.event_count for s in main_manifest.attack_stages if s.stage_name == "1_password_spray")
+    heldout_spray_count = next(s.event_count for s in heldout_manifest.attack_stages if s.stage_name == "1_password_spray")
+    assert main_spray_count == 400
+    assert heldout_spray_count == 120
+

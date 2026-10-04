@@ -41,6 +41,12 @@ export interface Scorecard {
   normalized_events: number;
   alerts_detected: number;
   incidents_correlated: number;
+  raw_events_reduced?: number;
+  event_reduction_percentage?: number;
+  decoy_total?: number;
+  decoy_flagged?: number;
+  decoy_cleared?: number;
+  decoy_clearance_rate?: number;
   decoys_cleared: number;
   noise_reduction_percentage: number;
   citation_accuracy_percentage: number;
@@ -126,6 +132,11 @@ export interface EvaluationMetrics {
   recall: number;
   f1_score: number;
   time_to_detect_seconds: number;
+  decoy_total?: number;
+  decoy_flagged?: number;
+  decoy_cleared?: number;
+  decoy_clearance_rate?: number;
+  event_reduction_percentage?: number;
 }
 
 export interface DetectionResponse {

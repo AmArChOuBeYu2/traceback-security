@@ -1,7 +1,7 @@
 # TRACEBACK 🛡️
 
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge&logo=github)
-![Tests](https://img.shields.io/badge/tests-21%2F21%20passing-success?style=for-the-badge&logo=pytest)
+![Tests](https://img.shields.io/badge/tests-23%2F23%20passing-success?style=for-the-badge&logo=pytest)
 ![Frontend](https://img.shields.io/badge/Frontend-Next.js%2015%20%7C%20TypeScript-black?style=for-the-badge&logo=nextdotjs)
 ![Backend](https://img.shields.io/badge/Backend-FastAPI%20%7C%20Python%203.14-blue?style=for-the-badge&logo=fastapi)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
@@ -43,8 +43,11 @@ $$\text{User} \longleftrightarrow \text{Source IP} \longleftrightarrow \text{Hos
 
 It correlates activity over temporal windows and maps events to MITRE ATT&CK stages (Initial Access → Privilege Escalation → Lateral Movement → Staging → Exfiltration).
 
-### 3. Ground-Truth Scorecard & Held-Out Testing
-TRACEBACK includes an auditable verification scorecard measuring **Evidence Linkage Accuracy (100%)**, **Detector Precision (100%)**, and **Noise Reduction Ratio (99.93%)**. It includes a second held-out attack dataset (`generate_heldout_dataset()`) to prove the engine evaluates unseen logs dynamically without hardcoded attack IDs.
+### 3. Auditable Evaluation Harness & Metric Semantics
+TRACEBACK programmatically measures evaluation metrics against ground-truth labels, clearly distinguishing:
+- **Raw Event Noise Reduction (98.83%)**: Compression of 52,149 raw event streams down to relevant evidence event sets.
+- **Explicit Decoy Clearance Rate (56.50%)**: Proportion of explicitly labeled benign decoy events evaluated and correctly not escalated to incident status.
+- **Detector Recall (100.0%)**: Zero missed ground-truth attack stages across both benchmark and secondary held-out datasets.
 
 ---
 
@@ -54,7 +57,7 @@ TRACEBACK includes an auditable verification scorecard measuring **Evidence Link
 |---|---|
 | **Multi-Format Log Ingestion** | Supports `.csv`, `.json`, `.jsonl`, and `syslog`/`auth.log` formats with automatic layout detection and error handling. |
 | **Deterministic Rule Detectors** | 6 zero-hallucination detectors covering SSH Brute Force (`T1110`), Success After Failure (`T1078`), Sudo/Mimikatz PrivEsc (`T1078`), SSH Lateral Pivots (`T1021`), Data Staging (`T1074`), and DNS Exfiltration (`T1071.004`). |
-| **52k→1 Noise Reduction Funnel** | Visually compresses 52,149 raw log events down to 34 critical attack evidence events. |
+| **Event Noise Reduction Funnel** | Visually compresses 52,149 raw log events down to 1 evidence-locked incident story. |
 | **Interactive Attack Replay** | Step-by-step playback with Play/Pause/Scrub controls, updating entity graph nodes and log line highlights in real time. |
 | **Cleared Decoys Panel** | Explicitly documents why non-malicious background noise (cron jobs, routine health checks) was filtered out. |
 | **Offline Demo Mode** | Automatic fallback to pre-rendered engine JSON fixtures in `/public/demo/` if backend or internet connectivity fails. |

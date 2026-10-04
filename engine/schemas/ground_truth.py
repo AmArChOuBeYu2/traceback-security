@@ -40,3 +40,9 @@ class EvaluationMetrics(BaseModel):
     recall: float
     f1_score: float
     time_to_detect_seconds: float
+    decoy_total: int = 0
+    decoy_flagged: int = 0
+    decoy_cleared: int = 0
+    decoy_clearance_rate: float = 100.0
+    event_reduction_percentage: float = 0.0
+

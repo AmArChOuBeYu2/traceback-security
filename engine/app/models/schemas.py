@@ -70,10 +70,16 @@ class Scorecard(BaseModel):
     normalized_events: int
     alerts_detected: int
     incidents_correlated: int
-    decoys_cleared: int
-    noise_reduction_percentage: float
-    citation_accuracy_percentage: float
-    estimated_triage_minutes_saved: float
+    raw_events_reduced: int = 0
+    event_reduction_percentage: float = 0.0
+    decoy_total: int = 0
+    decoy_flagged: int = 0
+    decoy_cleared: int = 0
+    decoy_clearance_rate: float = 100.0
+    noise_reduction_percentage: float = 0.0
+    citation_accuracy_percentage: float = 100.0
+    estimated_triage_minutes_saved: float = 0.0
+
 
 
 class CorrelatedIncident(BaseModel):

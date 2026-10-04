@@ -15,6 +15,8 @@ const badgeVariants = cva(
           "border-cyber-emerald/30 bg-cyber-emerald/10 text-cyber-emerald",
         destructive:
           "border-cyber-red/30 bg-cyber-red/10 text-cyber-red",
+        red:
+          "border-cyber-red/30 bg-cyber-red/10 text-cyber-red",
         amber:
           "border-cyber-amber/30 bg-cyber-amber/10 text-cyber-amber",
         outline:

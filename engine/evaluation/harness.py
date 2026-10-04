@@ -48,6 +48,9 @@ class DetectionEvaluationHarness:
         ground_truth_attack_ids = {
             eid for eid, label in manifest.event_labels.items() if label.is_attack
         }
+        ground_truth_decoy_ids = {
+            eid for eid, label in manifest.event_labels.items() if label.is_decoy
+        }
 
         tp = len(flagged_event_ids.intersection(ground_truth_attack_ids))
         fp = len(flagged_event_ids - ground_truth_attack_ids)
@@ -57,6 +60,16 @@ class DetectionEvaluationHarness:
         precision = (tp / (tp + fp)) * 100.0 if (tp + fp) > 0 else 0.0
         recall = (tp / (tp + fn)) * 100.0 if (tp + fn) > 0 else 0.0
         f1 = (2 * precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.0
+
+        # Explicit Decoy Clearance
+        decoy_total = len(ground_truth_decoy_ids)
+        decoy_flagged = len(flagged_event_ids.intersection(ground_truth_decoy_ids))
+        decoy_cleared = max(0, decoy_total - decoy_flagged)
+        decoy_clearance_rate = round((decoy_cleared / decoy_total) * 100.0, 2) if decoy_total > 0 else 100.0
+
+        # Raw Event Reduction / Compression
+        raw_events_reduced = max(0, manifest.total_events - len(flagged_event_ids))
+        event_reduction_pct = round((raw_events_reduced / max(1, manifest.total_events)) * 100.0, 2)
 
         # Calculate Time-to-Detect (seconds between first attack event and first finding event)
         first_attack_line = min((l.line_no for l in manifest.event_labels.values() if l.is_attack), default=1)
@@ -74,6 +87,11 @@ class DetectionEvaluationHarness:
             recall=round(recall, 2),
             f1_score=round(f1, 2),
             time_to_detect_seconds=round(ttd_seconds, 2),
+            decoy_total=decoy_total,
+            decoy_flagged=decoy_flagged,
+            decoy_cleared=decoy_cleared,
+            decoy_clearance_rate=decoy_clearance_rate,
+            event_reduction_percentage=event_reduction_pct,
         )
 
         return all_findings, incidents, metrics

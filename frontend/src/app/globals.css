@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
-
 :root {
   --bg: #080c14;
   --surface: #0f172a;
@@ -14,17 +12,22 @@
   --amber: #ffb703;
   --red: #ff0055;
   --purple: #9d4edd;
+
+  /* Tailwind CSS variable aliases (used by bg-background etc.) */
+  --background: 222 47% 6%;
+  --foreground: 214 32% 91%;
 }
 
-* { box-sizing: border-box; }
-
-body {
+html, body {
+  background-color: #080c14 !important;
   color: #e2e8f0;
-  background: var(--bg);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  min-height: 100%;
 }
+
+* { box-sizing: border-box; }
 
 /* ─── Scrollbar ─────────────────────────────────────── */
 ::-webkit-scrollbar { width: 5px; height: 5px; }

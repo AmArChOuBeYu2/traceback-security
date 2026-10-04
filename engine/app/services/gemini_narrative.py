@@ -9,112 +9,14 @@ from app.models.schemas import (
 )
 from app.core.config import settings
 
-logger = logging.getLogger("traceback.gemini")
+logger = logging.getLogger("traceback.narrative")
 
+# ─── Shared prompt builder ────────────────────────────────────────────────────
 
-class GeminiNarrativeService:
-    """
-    Generates evidence-locked incident narratives using Google Gemini API Free Tier.
-
-    SECURITY CONTRACT:
-    - NEVER sends raw log lines to Gemini.
-    - Sends ONLY structured finding metadata (rule IDs, timestamps, sanitized entities, counts, evidence IDs).
-    - Validates all generated claim evidence IDs against ground-truth finding event IDs.
-    - Recalculates linkage accuracy and drops unsupported claims.
-    - Gracefully falls back to deterministic Python template narrative if Gemini is unavailable or fails validation.
-    """
-
-    @staticmethod
-    def _format_findings_payload(alerts: List[DetectedAlert]) -> List[Dict[str, Any]]:
-        """
-        Extracts ONLY safe structured finding metadata for Gemini consumption.
-        No raw logs or un-sanitized log lines are passed.
-        """
-        payload = []
-        for alt in alerts:
-            payload.append(
-                {
-                    "finding_id": alt.alert_id,
-                    "rule_name": alt.rule_name,
-                    "mitre_technique": alt.mitre_technique,
-                    "severity": alt.severity,
-                    "timestamp": alt.timestamp,
-                    "entities": alt.entities,
-                    "event_count": len(alt.evidence_event_ids),
-                    "evidence_ids": alt.evidence_event_ids,
-                    "description": alt.description,
-                }
-            )
-        return payload
-
-    @classmethod
-    def generate_narrative(
-        cls, alerts: List[DetectedAlert], all_valid_event_ids: Set[str]
-    ) -> Tuple[List[NarrativeClaim], Dict[str, Any], bool]:
-        """
-        Main entry point. Returns (narrative_claims, metadata, is_gemini_used).
-        Tries Gemini API with 1 retry. Validates evidence citations.
-        Falls back to deterministic template if Gemini fails.
-        """
-        api_key = os.getenv("GEMINI_API_KEY", "").strip() or getattr(
-            settings, "GEMINI_API_KEY", ""
-        )
-
-        if not api_key:
-            logger.info(
-                "GEMINI_API_KEY not set. Using deterministic template narrative fallback."
-            )
-            return cls._deterministic_fallback(alerts)
-
-        findings_payload = cls._format_findings_payload(alerts)
-
-        # Try Gemini API with 1 retry
-        for attempt in range(1, 3):
-            try:
-                gemini_json = cls._call_gemini_api(api_key, findings_payload)
-                if not gemini_json:
-                    continue
-
-                # Validate & Filter Evidence Citations
-                claims, is_valid = cls._validate_and_filter_narrative(
-                    gemini_json, all_valid_event_ids
-                )
-                if is_valid and claims:
-                    return (
-                        claims,
-                        {
-                            "mode": "gemini",
-                            "model": "gemini-2.5-flash",
-                            "attempt": attempt,
-                            "title": gemini_json.get("title", ""),
-                            "summary": gemini_json.get("summary", ""),
-                            "containment": gemini_json.get("containment", []),
-                            "uncertainties": gemini_json.get("uncertainties", []),
-                        },
-                        True,
-                    )
-            except Exception as e:
-                logger.warning(f"Gemini API attempt {attempt} failed: {e}")
-
-        logger.warning(
-            "Gemini API failed or produced invalid citations after retries. Falling back to deterministic narrative."
-        )
-        return cls._deterministic_fallback(alerts)
-
-    @classmethod
-    def _call_gemini_api(
-        cls, api_key: str, findings_payload: List[Dict[str, Any]]
-    ) -> Optional[Dict[str, Any]]:
-        """
-        Calls Google AI Studio Gemini API endpoint with structured JSON mode.
-        """
-        url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
-        fallback_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
-
-        prompt = f"""You are a tier-3 SOC security analyst building an evidence-locked incident story for a kill-chain correlation engine.
+NARRATIVE_PROMPT_TEMPLATE = """You are a tier-3 SOC security analyst building an evidence-locked incident story for a kill-chain correlation engine.
 
 INPUT STRUCTURED FINDINGS:
-{json.dumps(findings_payload, indent=2)}
+{findings_json}
 
 CRITICAL SECURITY RULES:
 1. You must return ONLY valid JSON strictly matching the requested schema.
@@ -146,6 +48,188 @@ EXPECTED JSON SCHEMA:
 }}
 """
 
+
+class GeminiNarrativeService:
+    """
+    Generates evidence-locked incident narratives.
+
+    Provider priority:
+      1. OpenRouter (if OPENROUTER_API_KEY is set)  — uses any model you configure
+      2. Google Gemini (if GEMINI_API_KEY is set)   — gemini-2.5-flash / gemini-1.5-flash
+      3. Deterministic Python template fallback      — always works, no API needed
+
+    SECURITY CONTRACT:
+    - NEVER sends raw log lines to any LLM.
+    - Sends ONLY structured finding metadata (rule IDs, timestamps, sanitized entities, counts, evidence IDs).
+    - Validates all generated claim evidence IDs against ground-truth finding event IDs.
+    - Recalculates linkage accuracy and drops unsupported claims.
+    """
+
+    @staticmethod
+    def _format_findings_payload(alerts: List[DetectedAlert]) -> List[Dict[str, Any]]:
+        payload = []
+        for alt in alerts:
+            payload.append(
+                {
+                    "finding_id": alt.alert_id,
+                    "rule_name": alt.rule_name,
+                    "mitre_technique": alt.mitre_technique,
+                    "severity": alt.severity,
+                    "timestamp": alt.timestamp,
+                    "entities": alt.entities,
+                    "event_count": len(alt.evidence_event_ids),
+                    "evidence_ids": alt.evidence_event_ids,
+                    "description": alt.description,
+                }
+            )
+        return payload
+
+    @classmethod
+    def generate_narrative(
+        cls, alerts: List[DetectedAlert], all_valid_event_ids: Set[str]
+    ) -> Tuple[List[NarrativeClaim], Dict[str, Any], bool]:
+        """
+        Main entry point. Returns (narrative_claims, metadata, is_llm_used).
+        Tries OpenRouter -> Gemini -> deterministic fallback.
+        """
+        findings_payload = cls._format_findings_payload(alerts)
+        prompt = NARRATIVE_PROMPT_TEMPLATE.format(
+            findings_json=json.dumps(findings_payload, indent=2)
+        )
+
+        # ── 1. Try OpenRouter ────────────────────────────────────────────────
+        openrouter_key = os.getenv("OPENROUTER_API_KEY", "").strip()
+        if openrouter_key:
+            for attempt in range(1, 3):
+                try:
+                    result_json = cls._call_openrouter(openrouter_key, prompt)
+                    if result_json:
+                        claims, is_valid = cls._validate_and_filter_narrative(
+                            result_json, all_valid_event_ids
+                        )
+                        if is_valid and claims:
+                            model = os.getenv(
+                                "OPENROUTER_MODEL", "google/gemini-2.0-flash-001"
+                            )
+                            logger.info(
+                                f"OpenRouter narrative success (attempt {attempt}, model={model})"
+                            )
+                            return (
+                                claims,
+                                {
+                                    "mode": "openrouter",
+                                    "model": model,
+                                    "attempt": attempt,
+                                    "title": result_json.get("title", ""),
+                                    "summary": result_json.get("summary", ""),
+                                    "containment": result_json.get("containment", []),
+                                    "uncertainties": result_json.get("uncertainties", []),
+                                },
+                                True,
+                            )
+                except Exception as e:
+                    logger.warning(f"OpenRouter attempt {attempt} failed: {e}")
+            logger.warning("OpenRouter failed after retries.")
+
+        # ── 2. Try Gemini ────────────────────────────────────────────────────
+        gemini_key = os.getenv("GEMINI_API_KEY", "").strip() or getattr(
+            settings, "GEMINI_API_KEY", ""
+        )
+        if gemini_key:
+            for attempt in range(1, 3):
+                try:
+                    result_json = cls._call_gemini_api(gemini_key, findings_payload)
+                    if result_json:
+                        claims, is_valid = cls._validate_and_filter_narrative(
+                            result_json, all_valid_event_ids
+                        )
+                        if is_valid and claims:
+                            logger.info(f"Gemini narrative success (attempt {attempt})")
+                            return (
+                                claims,
+                                {
+                                    "mode": "gemini",
+                                    "model": "gemini-2.5-flash",
+                                    "attempt": attempt,
+                                    "title": result_json.get("title", ""),
+                                    "summary": result_json.get("summary", ""),
+                                    "containment": result_json.get("containment", []),
+                                    "uncertainties": result_json.get("uncertainties", []),
+                                },
+                                True,
+                            )
+                except Exception as e:
+                    logger.warning(f"Gemini attempt {attempt} failed: {e}")
+            logger.warning("Gemini failed after retries.")
+
+        # ── 3. Deterministic fallback ────────────────────────────────────────
+        logger.info(
+            "Using deterministic template narrative (no API key set or all providers failed)."
+        )
+        return cls._deterministic_fallback(alerts)
+
+    # ─── OpenRouter ───────────────────────────────────────────────────────────
+
+    @classmethod
+    def _call_openrouter(
+        cls, api_key: str, prompt: str
+    ) -> Optional[Dict[str, Any]]:
+        """
+        Calls OpenRouter via the OpenAI-compatible /chat/completions endpoint.
+        Model is configurable via OPENROUTER_MODEL env var.
+        Defaults to google/gemini-2.0-flash-001 (fast, cheap, great for JSON tasks).
+        """
+        model = os.getenv("OPENROUTER_MODEL", "google/gemini-2.0-flash-001")
+        url = "https://openrouter.ai/api/v1/chat/completions"
+
+        headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+            "HTTP-Referer": "https://traceback.security",
+            "X-Title": "TRACEBACK Evidence Engine",
+        }
+        body = {
+            "model": model,
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You are a cybersecurity analyst. Always respond with valid JSON only, no markdown fences.",
+                },
+                {"role": "user", "content": prompt},
+            ],
+            "temperature": 0.1,
+            "response_format": {"type": "json_object"},
+        }
+
+        with httpx.Client(timeout=30.0) as client:
+            resp = client.post(url, headers=headers, json=body)
+            if resp.status_code != 200:
+                logger.warning(
+                    f"OpenRouter HTTP {resp.status_code}: {resp.text[:300]}"
+                )
+                return None
+
+            data = resp.json()
+            try:
+                text_content = data["choices"][0]["message"]["content"]
+                return json.loads(text_content)
+            except (KeyError, IndexError, json.JSONDecodeError) as e:
+                logger.warning(f"OpenRouter response parse error: {e}")
+                return None
+
+    # ─── Gemini ───────────────────────────────────────────────────────────────
+
+    @classmethod
+    def _call_gemini_api(
+        cls, api_key: str, findings_payload: List[Dict[str, Any]]
+    ) -> Optional[Dict[str, Any]]:
+        """Calls Google AI Studio Gemini API with structured JSON mode."""
+        prompt = NARRATIVE_PROMPT_TEMPLATE.format(
+            findings_json=json.dumps(findings_payload, indent=2)
+        )
+        url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
+        fallback_url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
+
         headers = {
             "Content-Type": "application/json",
             "x-goog-api-key": api_key,
@@ -158,10 +242,9 @@ EXPECTED JSON SCHEMA:
             },
         }
 
-        with httpx.Client(timeout=10.0) as client:
+        with httpx.Client(timeout=30.0) as client:
             resp = client.post(url, headers=headers, json=body)
             if resp.status_code != 200:
-                # Try fallback model gemini-1.5-flash if 2.5-flash is unavailable
                 resp = client.post(fallback_url, headers=headers, json=body)
                 if resp.status_code != 200:
                     return None
@@ -173,15 +256,17 @@ EXPECTED JSON SCHEMA:
             except (KeyError, IndexError, json.JSONDecodeError):
                 return None
 
+    # ─── Validation ───────────────────────────────────────────────────────────
+
     @classmethod
     def _validate_and_filter_narrative(
-        cls, gemini_json: Dict[str, Any], valid_event_ids: Set[str]
+        cls, result_json: Dict[str, Any], valid_event_ids: Set[str]
     ) -> Tuple[List[NarrativeClaim], bool]:
         """
-        Validates Gemini response schema, verifies all evidence IDs, filters out invalid claims,
-        and computes verification accuracy.
+        Validates LLM response schema, verifies all evidence IDs, filters out invalid claims.
+        Requires >= 50% of steps to have valid evidence IDs.
         """
-        steps = gemini_json.get("steps", [])
+        steps = result_json.get("steps", [])
         if not steps:
             return [], False
 
@@ -193,7 +278,6 @@ EXPECTED JSON SCHEMA:
             raw_evidence_ids = step.get("evidence_ids", [])
             stage = step.get("stage", "Execution")
 
-            # Filter evidence IDs to only those that exist in valid_event_ids
             filtered_ids = [
                 ev_id for ev_id in raw_evidence_ids if ev_id in valid_event_ids
             ]
@@ -213,11 +297,12 @@ EXPECTED JSON SCHEMA:
                     )
                 )
 
-        # Require at least 50% valid claims to consider Gemini response successful
         is_narrative_valid = (
             (valid_claims_count / len(steps)) >= 0.5 if steps else False
         )
         return validated_claims, is_narrative_valid
+
+    # ─── Deterministic fallback ────────────────────────────────────────────────
 
     @classmethod
     def _deterministic_fallback(
@@ -225,6 +310,7 @@ EXPECTED JSON SCHEMA:
     ) -> Tuple[List[NarrativeClaim], Dict[str, Any], bool]:
         """
         Deterministic Python fallback template narrative. 100% evidence linkage guaranteed.
+        No API key required.
         """
         claims: List[NarrativeClaim] = []
         if not alerts:

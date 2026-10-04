@@ -27,8 +27,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        mono: ["var(--font-geist-mono)", "Courier New", "monospace"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "JetBrains Mono", "Courier New", "monospace"],
+        sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
       },
       boxShadow: {
         "cyan-glow": "0 0 20px rgba(0, 243, 255, 0.25)",
