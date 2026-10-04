@@ -97,3 +97,26 @@ class CorrelatedIncident(BaseModel):
 class AnalysisRequest(BaseModel):
     dataset_name: Optional[str] = "benchmark_52k"
     raw_logs: Optional[List[RawLogEntry]] = None
+
+
+class NarrativeStep(BaseModel):
+    stage: str
+    claim: str
+    evidence_ids: List[str]
+    confidence: float = 0.95
+
+
+class ContainmentAction(BaseModel):
+    action: str
+    why: str
+    evidence_ids: List[str]
+
+
+class StructuredNarrativeJSON(BaseModel):
+    title: str
+    severity: str
+    summary: str
+    steps: List[NarrativeStep]
+    containment: List[ContainmentAction] = Field(default_factory=list)
+    uncertainties: List[str] = Field(default_factory=list)
+

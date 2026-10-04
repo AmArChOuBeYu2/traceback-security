@@ -249,9 +249,11 @@ Copy `.env.example` to create your local `.env` files:
 | Variable | Required | Purpose | Default |
 |---|---|---|---|
 | `NEXT_PUBLIC_ENGINE_URL` | Yes | API base URL for FastAPI engine | `http://localhost:8000` |
+| `GEMINI_API_KEY` | Optional | Google AI Studio Gemini API Free Tier Key | `""` (Falls back to deterministic narrative) |
 | `PORT` | No | Port for FastAPI backend service | `8000` |
 | `ENVIRONMENT` | No | Deployment environment (`development` / `production`) | `development` |
 | `CORS_ORIGINS` | No | Allowed CORS origin URLs | `http://localhost:3000` |
+
 
 ---
 

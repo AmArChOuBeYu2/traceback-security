@@ -9,6 +9,9 @@ from app.models.schemas import (
 )
 
 
+from app.services.gemini_narrative import GeminiNarrativeService
+
+
 class IncidentCorrelator:
     """
     Correlates detected alerts into a unified kill-chain incident,
@@ -31,34 +34,14 @@ class IncidentCorrelator:
         # Deduplicate evidence IDs
         unique_evidence_ids = list(dict.fromkeys(all_evidence_ids))
 
-        # Build Evidence-Locked Narrative Claims dynamically from detected alerts
-        narrative_claims: List[NarrativeClaim] = []
+        # Generate Evidence-Locked Narrative Claims (Gemini API with deterministic fallback)
+        narrative_claims, ai_meta, _ = GeminiNarrativeService.generate_narrative(
+            alerts, set(unique_evidence_ids)
+        )
         replay_steps: List[AttackReplayStep] = []
 
-        if not alerts:
-            # Fallback for benign dataset without alerts
-            narrative_claims.append(
-                NarrativeClaim(
-                    claim_id="CLM-001",
-                    sentence="No malicious activity or suspicious kill-chain patterns detected in the analyzed log stream.",
-                    evidence_event_ids=[],
-                    is_verified=True,
-                    mitre_stage="Clean Baseline",
-                )
-            )
-        else:
+        if alerts:
             for idx, alt in enumerate(alerts, 1):
-                claim_id = f"CLM-{idx:03d}"
-                narrative_claims.append(
-                    NarrativeClaim(
-                        claim_id=claim_id,
-                        sentence=f"[{alt.mitre_technique}] {alt.description}",
-                        evidence_event_ids=alt.evidence_event_ids,
-                        is_verified=True,
-                        mitre_stage=alt.rule_name.split()[0] if alt.rule_name else "Execution",
-                    )
-                )
-
                 source_ent = alt.entities[0] if alt.entities else "Unknown"
                 target_ent = alt.entities[1] if len(alt.entities) > 1 else "System"
 
